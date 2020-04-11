@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('twitter_address');
             $table->string('skype_id');
             $table->string('discord_id');
-            $table->string('uid');
             $table->string('provider');
 
             $table->rememberToken();
