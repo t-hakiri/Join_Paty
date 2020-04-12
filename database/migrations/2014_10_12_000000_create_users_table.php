@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('profile');
-            $table->string('twitter_address');
-            $table->string('skype_id');
-            $table->string('discord_id');
-            $table->string('provider');
+            $table->string('profile')->default('未設定');
+            $table->string('twitter_address')->default('未設定');
+            $table->string('skype_id')->default('未設定');
+            $table->string('discord_id')->default('未設定');
+            $table->string('provider')->default('未設定');
 
             $table->rememberToken();
             $table->timestamps();
