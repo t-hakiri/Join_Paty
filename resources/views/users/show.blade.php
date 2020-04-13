@@ -48,7 +48,7 @@
       </div>
       <div>
          @if ($current_user == $user)
-         <a href="/users/{{ $user->id }}/edit">edit</a>
+         <a href="/users/{{ $user->id }}/edit" class="btn btn-primary">edit</a>
          @endif
       </div>
     </div>
