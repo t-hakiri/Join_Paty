@@ -66,6 +66,14 @@
                             <br><br>
 
                             <div class="form-group row">
+                                <label for="profile" name="user_image" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール画像') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="profile" type="file" name="profile" placeholder="任意項目（空欄可）" autocomplete="profile">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="profile" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール') }}</label>
 
                                 <div class="col-md-6">

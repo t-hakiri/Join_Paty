@@ -17,13 +17,14 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('user_image', 100)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('profile')->default('未設定');
-            $table->string('twitter_address')->default('未設定');
-            $table->string('skype_id')->default('未設定');
-            $table->string('discord_id')->default('未設定');
-            $table->string('provider')->default('未設定');
+            $table->string('profile')->nullable();
+            $table->string('twitter_address')->nullable();
+            $table->string('skype_id')->nullable();
+            $table->string('discord_id')->nullable();
+            $table->string('provider')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
