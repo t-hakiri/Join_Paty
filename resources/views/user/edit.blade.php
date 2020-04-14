@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('新規登録フォーム') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ url('users/'.$user->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('user/'.$user->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 

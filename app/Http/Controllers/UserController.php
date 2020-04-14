@@ -19,7 +19,6 @@ class UserController extends Controller
     {
       $user = User::findOrFail($id);
       $current_user = Auth::user();
-      // eval(\Psy\sh());
 
       return view('user/show', compact('user',('current_user')));
     }

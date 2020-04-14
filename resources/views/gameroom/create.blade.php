@@ -8,16 +8,16 @@
                 <div class="card-header">{{ __('新規登録フォーム') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('gameroom.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('アカウント名') }}</label>
+                            <label for="play_time" class="col-md-4 col-form-label text-md-right">{{ __('遊ぶ時間') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" placeholder="必須項目" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="play_time" placeholder="必須項目" type="text" class="form-control @error('play_time') is-invalid @enderror" name="play_time" value="{{ old('play_time') }}" required autocomplete="play_time" autofocus>
 
-                                @error('name')
+                                @error('play_time')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
