@@ -9,19 +9,44 @@
             <input type="text" name="keyword" value="" class="form-control" placeholder="名前を入力してください">
             <input type="submit" value="検索" class="btn btn-info">
           </div>
+
         </form>
       </div>
     </div>
   </div>
-  <div class="popular_game">
-    <h4 class="text-center">画像をクリックすると検索窓にタイトルが入ります</h4>
+  <br>
+  <h4 class="text-center">画像をクリックすると検索窓にタイトルが入ります</h4>
+  <div class="popular_game text-center">
+    
     <!-- <input type="image" src="/storage/user/no_image.png" alt="押してケロ♪"> -->
-    <img src="/storage/user/no_image.png" class="user_image">
-    <img src="/storage/user/no_image.png" class="user_image">
-    <img src="/storage/user/no_image.png" class="user_image">
-    <img src="/storage/user/no_image.png" class="user_image">
-    <img src="/storage/user/no_image.png" class="user_image">
-    <img src="/storage/user/no_image.png" class="user_image">
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:Electronic Arts</a></p>
+    </div>
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:PUBG DMM</a></p>
+    </div>
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:Epic Games</a></p>
+    </div>
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:FF14公式</a></p>
+    </div>
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:Electronic Arts</a></p>
+    </div>
+    <div class="inline-block">
+      <img src="/storage/user/no_image.png" class="user_image">
+      <p><a href="https://www.ea.com/">引用元:Electronic Arts</a></p>
+    </div>
+  </div>
+
+  <div class="index_search_zone">
+    
   </div>
 </div>
 

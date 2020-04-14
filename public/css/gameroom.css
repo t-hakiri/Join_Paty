@@ -5,6 +5,9 @@
   border: 1px;
   overflow:scroll;
   width:100%; 
-  height:20rem; 
-  background:skyblue;
+  height:20rem;
+}
+
+.inline-block {
+  display: inline-block;
 }
