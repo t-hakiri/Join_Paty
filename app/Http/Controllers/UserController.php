@@ -19,8 +19,9 @@ class UserController extends Controller
     {
       $user = User::findOrFail($id);
       $current_user = Auth::user();
+      // eval(\Psy\sh());
 
-      return view('users/show', compact('user',('current_user')));
+      return view('user/show', compact('user',('current_user')));
     }
 
     // 更新用フォーム画面へ移動
@@ -32,7 +33,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-      return view('users.edit', ['user' => $user]);
+      return view('user.edit', ['user' => $user]);
     }
 
     // 実際の更新処理
@@ -46,6 +47,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $uploadfile = $request->file('user_image');
+        if(!empty($uploadfile)){
+            $user_imagename = $request->file('user_image')->hashName();
+            $request->file('user_image')->storeAs('public/user', $user_imagename);
+
+            $param = [
+                'user_image'=>$user_imagename,
+            ];
+            $user->user_image = $user_imagename;
+            $user->save();
+          }
+        
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->profile = $request->profile;
@@ -53,7 +67,7 @@ class UserController extends Controller
         $user->skype_id = $request->skype_id;
         $user->discord_id = $request->discord_id;
         $user->save();
-        return redirect('users/'.$user->id);
+        return redirect('user/'.$user->id)->with(['success'=> '保存しました']);
     }
 
     /**
@@ -66,19 +80,5 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect('/home');
-    }
-
-    public function image(Request $request, User $user) {
-
-    // バリデーション省略
-    $originalImg = $request->user_image;
-
-      if($originalImg->isValid()) {
-        $filePath = $originalImg->store('public');
-        $user->user_image = str_replace('public/', '', $filePath);
-        $user->save();
-        return redirect("/user/{$user->id}")->with('user', $user);
-
-      }
     }
 }

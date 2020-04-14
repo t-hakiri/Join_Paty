@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('新規登録フォーム') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ url('users/'.$user->id) }}" method="post">
+                    <form action="{{ url('users/'.$user->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -42,10 +42,10 @@
                             <br><br>
 
                             <div class="form-group row">
-                                <label for="profile" name="user_image" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール画像') }}</label>
+                                <label for="user_image" name="user_image" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール画像') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="profile" type="file" name="profile" placeholder="任意項目（空欄可）" autocomplete="profile">
+                                    <input id="user_image" type="file" name="user_image" >
                                 </div>
                             </div>
 

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
@@ -10,9 +9,9 @@
             <div class="row">
               <div class="col-md-6">
                 @if($user->user_image == null)
-                <img src="/storage/noimage.png">
+                <img src="/storage/user/no_image.png" class="user_image">
                 @else
-                <img src="/storage/{{$user->image}}">
+                <img src="/storage/user/{{ $user->user_image }}" class="user_image">
                 @endif
                 </div>
               <div class="col-md-6">

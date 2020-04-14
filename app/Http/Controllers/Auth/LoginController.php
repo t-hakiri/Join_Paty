@@ -41,6 +41,6 @@ class LoginController extends Controller
       if(! Auth::user()) {
            return '/';
       }
-      return route('users.show', ['user' => Auth::id()]);
+      return route('user.show', ['user' => Auth::id()]);
    }
 }
