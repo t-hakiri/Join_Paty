@@ -20,4 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('user', 'UserController');
-Route::resource('gameroom', 'GameRoomsController');
+
+Route::group(['middleware' => ['auth']], function(){
+  Route::resource('gameroom', 'GameRoomsController');
+});
