@@ -16,6 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/gameroom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
@@ -51,6 +52,11 @@
                                 </li>
                             @endif
                         @else
+
+                            <li class="nav-item right">
+                                <a class="nav-link" id='right' href="{{ route('gameroom.create') }}">{{ __('遊ぶ相手を募集する') }}</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -75,6 +81,12 @@
                 </div>
             </div>
         </nav>
+
+        @if (session('flash_message'))
+            <div class="flash_message text-center">
+                {{ session('flash_message') }}
+            </div>
+        @endif
 
         <main class="py-4">
             @yield('content')

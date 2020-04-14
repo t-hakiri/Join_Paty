@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.right {
+  margin-right: 47rem;
+}
+
+#right {
+  color: currentColor !important;
+}

@@ -9,10 +9,8 @@ class GameRoomsController extends Controller
 {
     public function index()
     {
-      // DBよりBookテーブルの値を全て取得
+     
       $gamerooms = GameRoom::all();
-
-      // 取得した値をビュー「book/index」に渡す
       return view('gameroom/index', compact('gamerooms'));
     }
 
@@ -27,16 +25,18 @@ class GameRoomsController extends Controller
     $gameroom = new GameRoom();
 
       $gameroom->create([
-          'play_time' => '$play_time',
-          'play_device' => '$play_device',
-          // 'comment' => '$comment',
-          // 'game_title' => '$game_title',
-          // 'vc_possible' => '$vc_possible',
-          // 'available_skype' => '$available_skype',
-          // 'available_discord' => '$available_discord',
-          // 'available_twitter' => '$available_twitter',
-          // 'available_ingame_vc' => '$available_ingame_vc',
-          'room_name' => '$room_name',
+          'play_time' => $request->play_time,
+          'play_device' => $request->play_device,
+          'comment' => $request->comment,
+          'game_title' => $request->game_title,
+          // 'vc_possible' => '$request->vc_possible',
+          // 'available_skype' => '$request->available_skype',
+          // 'available_discord' => '$request->available_discord',
+          // 'available_twitter' => '$request->available_twitter',
+          // 'available_ingame_vc' => '$request->available_ingame_vc',
+          'room_name' => $request->room_name,
       ]);
+      return redirect('gameroom')->with(['flash_message'=> '作成しました']);
+
     }
 }

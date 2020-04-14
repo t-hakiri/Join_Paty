@@ -66,7 +66,7 @@ class UserController extends Controller
         $user->skype_id = $request->skype_id;
         $user->discord_id = $request->discord_id;
         $user->save();
-        return redirect('user/'.$user->id)->with(['success'=> '保存しました']);
+        return redirect('user/'.$user->id)->with(['flash_message'=> '保存しました']);
     }
 
     /**
