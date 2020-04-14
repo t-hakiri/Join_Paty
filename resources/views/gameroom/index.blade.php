@@ -9,7 +9,6 @@
             <input type="text" name="keyword" value="" class="form-control" placeholder="名前を入力してください">
             <input type="submit" value="検索" class="btn btn-info">
           </div>
-
         </form>
       </div>
     </div>
@@ -45,8 +44,15 @@
     </div>
   </div>
 
+  <br><hr>
   <div class="index_search_zone">
-    
+
+    @foreach($gamerooms as $gameroom)
+    <div class='card'>
+      {{$gameroom->room_name}}
+      <a href="/gameroom/{{ $gameroom->id }}">みる</a>
+    </div>
+      @endforeach
   </div>
 </div>
 

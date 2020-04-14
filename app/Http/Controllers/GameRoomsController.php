@@ -14,6 +14,11 @@ class GameRoomsController extends Controller
       return view('gameroom/index', compact('gamerooms'));
     }
 
+    public function show(GameRoom $gameroom)
+    {
+      return view('gameroom/show', compact('gameroom'));
+    }
+
     public function create()
     {
       return view('gameroom.create');
