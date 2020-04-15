@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function messages()
     {
-        return $this->belongsToMany('App\Message');
+        return $this->belongsToMany('App\Message', 'message_user')->using(MessageUser::class)->withPivot(['room_id']);
     }
 }
