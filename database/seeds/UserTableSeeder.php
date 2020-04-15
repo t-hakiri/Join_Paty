@@ -17,5 +17,12 @@ class UserTableSeeder extends Seeder
         'password' => 'test1@aa.aa',
         ]);
         $user->save();
+
+      $user2 = new \App\User([
+        'name' => 'test2',
+        'email' => 'test2@aa.aa',
+        'password' => 'test2@aa.aa',
+        ]);
+      $user2->save();
     }
 }
