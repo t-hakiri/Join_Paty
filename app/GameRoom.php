@@ -17,5 +17,6 @@ class GameRoom extends Model
         'available_twitter', 
         'available_ingame_vc',
         'room_name',
+        'owner',
     ];
 }

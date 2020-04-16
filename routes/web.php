@@ -23,4 +23,6 @@ Route::resource('user', 'UserController');
 
 Route::group(['middleware' => ['auth']], function(){
   Route::resource('gameroom', 'GameRoomsController');
+  // Route::resource('message', 'MessageController');
+  Route::POST('message', 'MessageController@store')->name('message.store');
 });

@@ -14,10 +14,9 @@ class CreateMessageUserTable extends Migration
     public function up()
     {
         Schema::create('message_user', function (Blueprint $table) {
-            $table->unsignedInteger('room_id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('message_id');
-            $table->primary(['user_id','message_id']);
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('message_id')->nullable();
+            // $table->primary(['user_id','message_id']);
             $table->timestamps();
 
             // 外部キー制約

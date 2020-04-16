@@ -18,7 +18,7 @@
   <div class="popular_game text-center">
     
     <div class="inline-block">
-      <button type="submit"><img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop191x100.1200w.jpg" alt="送信" class="user_image" id='tag_1' /></button>
+      <button type="submit"><img src="/storage/game-logo/hakip.jpg" alt="送信" class="user_image" id='tag_1' /></button>
       <p><a href="https://www.ea.com/">引用元:Electronic Arts</a></p>
     </div>
     <div class="inline-block">
@@ -33,6 +33,7 @@
       <button type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR8RnfbyyTRZMFMOGhgDZabd6hhBVpPaBJu3KIfQtsnAa0rLj30" alt="送信" class="user_image" id='tag_4' /></button>
       <p><a href="https://jp.finalfantasyxiv.com/">引用元:FF14公式</a></p>
     </div>
+
     <div class="inline-block">
       <button type="submit"><img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop191x100.1200w.jpg" alt="送信" class="user_image" id='tag_6' /></button>
       <p><a href="https://www.ea.com/">引用元:Electronic Arts</a></p>
@@ -43,10 +44,10 @@
   <div class="index_search_zone">
 
     @foreach($gamerooms as $gameroom)
-    <div class='card'>
-      {{$gameroom->room_name}}
-      <a href="/gameroom/{{ $gameroom->id }}">みる</a>
-    </div>
+      <div class='card'>
+        {{$gameroom->room_name}}
+        <a href="/gameroom/{{ $gameroom->id }}">みる</a>
+      </div>
       @endforeach
   </div>
 </div>

@@ -3,20 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\GameRoom;
+use App\Message;
+use App\User;
+use App\ChatRoom;
+use App\MessageUser;
+
 
 class GameRoomsController extends Controller
 {
     public function index()
-    {
-     
+    {      
       $gamerooms = GameRoom::all();
+      $users = User::all();
+
       return view('gameroom/index', compact('gamerooms'));
     }
 
     public function show(GameRoom $gameroom)
     {
-      return view('gameroom/show', compact('gameroom'));
+      
+      $messages = Message::where('room_id', $gameroom->id)->get();
+      return view('gameroom/show', compact('gameroom', 'messages'));
     }
 
     public function create()
@@ -26,10 +35,10 @@ class GameRoomsController extends Controller
 
     public function store(Request $request)
     {
-      // データベースに値をinsert
-    $gameroom = new GameRoom();
+    
+      $gameroom = new GameRoom();
 
-      $gameroom->create([
+      $room = $gameroom->create([
           'play_time' => $request->play_time,
           'play_device' => $request->play_device,
           'comment' => $request->comment,
@@ -40,7 +49,13 @@ class GameRoomsController extends Controller
           // 'available_twitter' => '$request->available_twitter',
           // 'available_ingame_vc' => '$request->available_ingame_vc',
           'room_name' => $request->room_name,
+          'owner' => Auth::user()->id,
+
       ]);
+
+      // $chatroom = new ChatRoom();
+      // $chatroom->create();
+
       return redirect('gameroom')->with(['flash_message'=> '作成しました']);
 
     }

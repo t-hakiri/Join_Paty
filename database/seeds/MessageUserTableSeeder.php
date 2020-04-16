@@ -11,11 +11,10 @@ class MessageUserTableSeeder extends Seeder
      */
     public function run()
     {
-        $messageuser = new \App\MessageUser([
-          'room_id' => '1',
+        $message = new \App\MessageUser([
           'user_id' => '1',
           'message_id' => '1',
         ]);
-        $messageuser->save();
+        $message->save();
     }
 }

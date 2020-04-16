@@ -14,6 +14,7 @@ class MessageTableSeeder extends Seeder
         $message = new \App\Message([
           'user_id' => '1',
           'body' => 'test1@aa.aa',
+          'room_id' => '1',
         ]);
         $message->save();
     }

@@ -8,8 +8,8 @@ class MessageUser extends Pivot
 {
     protected $table = 'message_user';
 
-    public function role()
+    public function messages()
     {
-        return $this->belongsTo(Role::class);
+        return $this->hasMany('App\Message');
     }
 }
