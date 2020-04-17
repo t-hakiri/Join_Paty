@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{ asset('css/chatroom.css') }}">
 @section('content')
 <div class="chat-container row justify-content-center">
     <div class="chat-area">

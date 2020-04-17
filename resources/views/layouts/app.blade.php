@@ -15,14 +15,20 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/gameroom.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/chatroom.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/gameroom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/chatroom.css') }}"> -->
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
