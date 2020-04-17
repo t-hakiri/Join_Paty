@@ -81,6 +81,13 @@
             <p class="card-text">
               <div class='text-center'>
                   VCを使用します
+                  <div class="vc_tool">
+                    @if($gameroom->available_skype == true)
+                      skype
+                    @else
+                      discode
+                    @endif
+                  </div>
               </div>
             </p>
           @endif

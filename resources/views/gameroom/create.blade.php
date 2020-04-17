@@ -81,15 +81,31 @@
                             </div>
                         </div>
 
+                        <div class="hidden_box">
+        
+                            <div class="form-group row hidden_box">
+                                <label for="vc_possible" class="col-md-4 col-form-label text-md-right">{{ __('VCを使用する') }}</label>
 
-                        <div class="form-group row">
-                            <label for="vc_possible" class="col-md-4 col-form-label text-md-right">{{ __('VCを使用する') }}</label>
+                <div class="col-md-6">
+                    <input id="vc_possible" type="checkbox" class="form-control" name="vc_possible">
 
-                            <div class="col-md-6">
-                                <input id="vc_possible" type="checkbox" class="form-control" name="vc_possible">
+                <div class="hidden_show row tool-select">
+                    <label for="available_skype" class="col-md-4 col-form-label text-md-right">{{ __('ツール') }}</label>
+
+                    <div class="col-md-6 justify-content-center">
+                        <select class="my_class " name="vc_tool">
+                            <option value="1">Skype</option>
+                            <option value="2">Discode</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                                <div class="hidden_show">
+                                    
+                                </div>
                             </div>
                         </div>
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 ">

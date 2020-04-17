@@ -50,12 +50,18 @@ class GameRoomsController extends Controller
     
       $gameroom = new GameRoom();
 
-      eval(\Psy\sh());
-
-      if($request->vc_possible == 'on')
+      if($request->vc_possible == 'on' && $request->vc_tool == '1')
       {
         $vc_possible = true;
-      };
+        $available_skype = true;
+        $available_discord = false;
+      } else {
+        $vc_possible = true;
+        $available_skype = false;
+        $available_discord = true;
+      }
+
+      eval(\Psy\sh());
 
       $room = $gameroom->create([
           'play_time' => $request->play_time,
@@ -63,8 +69,8 @@ class GameRoomsController extends Controller
           'comment' => $request->comment,
           'game_title' => $request->game_title,
           'vc_possible' => $vc_possible,
-          // 'available_skype' => '$request->available_skype',
-          // 'available_discord' => '$request->available_discord',
+          'available_skype' => $available_skype,
+          'available_discord' => $available_discord,
           // 'available_twitter' => '$request->available_twitter',
           // 'available_ingame_vc' => '$request->available_ingame_vc',
           'room_name' => $request->room_name,

@@ -19,3 +19,31 @@
 .gamerooms{
   background-color: azure!important;
 }
+
+/*_______________*/
+
+.hidden_box {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+    padding: 10px 0px 10px 30px;
+    height: auto;
+    opacity: 1;
+}
+
+/*_______________*/
+
+.tool-select {
+  padding-left: 10rem;
+}
