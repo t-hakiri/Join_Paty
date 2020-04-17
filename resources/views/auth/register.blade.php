@@ -5,7 +5,7 @@
   <div class="container my-5 py-5 z-depth-1">
  
     <!--Section: Content-->
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text" >
 
       <!--Grid row-->
       <div class="row d-flex justify-content-center">
@@ -30,8 +30,6 @@
                     <br>
                 @enderror
             </div>
-            
-
             <!-- E-mail -->
             <div>
                 <input type="email" id="email" class="form-control @error('email') is-invalid @enderror mb-4" placeholder="メールアドレス" name="email" value="{{ old('email') }}" required autocomplete="email">
