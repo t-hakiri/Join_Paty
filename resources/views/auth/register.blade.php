@@ -1,91 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('新規登録フォーム') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('アカウント名') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" placeholder="必須項目" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" placeholder="必須項目" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" placeholder="必須項目" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('パスワード確認') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" placeholder="必須項目" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('作成する') }}
-                                </button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
 
   <div class="container my-5 py-5 z-depth-1">
-
  
     <!--Section: Content-->
     <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
-
 
       <!--Grid row-->
       <div class="row d-flex justify-content-center">
@@ -94,86 +14,62 @@
         <div class="col-md-6">
 
           <!-- Default form register -->
-          <form class="text-center" action="#!">
+          <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-            <p class="h4 mb-4">Sign up</p>
+            <p class="h4 mb-4 text-center">アカウント作成</p>
 
-            <div class="form-row mb-4">
-              <div class="col">
-                <!-- First name -->
-                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-              </div>
-              <div class="col">
-                <!-- Last name -->
-                <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-              </div>
+            <!-- name -->
+            <div>
+                <input type="text" id="name" class="form-control @error('name') is-invalid @enderror mb-4" placeholder="アカウント名" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>↑{{ $message }}</strong>
+                    </span>
+                    <br>
+                @enderror
             </div>
+            
 
             <!-- E-mail -->
-            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <div>
+                <input type="email" id="email" class="form-control @error('email') is-invalid @enderror mb-4" placeholder="メールアドレス" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-            <!-- Password -->
-            <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
-              aria-describedby="defaultRegisterFormPasswordHelpBlock">
-            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-              At least 8 characters and 1 digit
-            </small>
-
-            <!-- Phone number -->
-            <input type="number" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-              aria-describedby="defaultRegisterFormPhoneHelpBlock">
-            <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-              Optional - for two step authentication
-            </small>
-
-            <!-- Newsletter -->
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
-              <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our
-                newsletter</label>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>↑{{ $message }}</strong>
+                    </span>
+                    <br>
+                @enderror
             </div>
 
+            <!-- Password -->
+            <div>
+                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror mb-4" placeholder="パスワード" name="password" required autocomplete="new-password">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>↑{{ $message }}</strong>
+                    </span>
+                    <br>
+                @enderror
+            </div>
+
+            <!-- password-confirm -->
+            <input type="password" id="password-confirm" class="form-control" placeholder="パスワード（確認）"
+              name="password_confirmation" required autocomplete="new-password">
+
             <!-- Sign up button -->
-            <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
-
-            <!-- Social register -->
-            <p>or sign up with:</p>
-
-                <a href="#" class="mx-1" role="button"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="mx-1" role="button"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="mx-1" role="button"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="mx-1" role="button"><i class="fab fa-github"></i></a>
-
+            <button class="btn btn-info my-4 btn-block" type="submit">アカウントを作成する</button>
             <hr>
-
-            <!-- Terms of service -->
-            <p>By clicking
-              <em>Sign up</em> you agree to our
-              <a href="" target="_blank">terms of service</a>
-
           </form>
           <!-- Default form register -->
-
         </div>
         <!--Grid column-->
-
       </div>
       <!--Grid row-->
-
-
     </section>
     <!--Section: Content-->
-
-
   </div>
-
-
-
-
-
-
-
-
-
-
 @endsection
