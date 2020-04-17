@@ -21,7 +21,7 @@
             <textarea class="form-control" id="comment" name="body" placeholder="Shift + Enterで送信可能"
                 aria-label="With textarea" onkeydown="if(event.shiftKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
             <input type="hidden" name="room_id" value="{{optional($gameroom)->id}}">
-            <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">Submit</button>
+            <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">送信</button>
         </div>
     </div>
 </form>

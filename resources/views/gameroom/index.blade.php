@@ -94,7 +94,7 @@
 
           <p class="card-text">
             <div class='text-center'>
-              <a href="/gameroom/{{ $gameroom->id }}">参加する</a>
+              <a href="/gameroom/{{ $gameroom->id }}" class="btn blue-gradient">参加する</a>
             </div>
           </p>
 

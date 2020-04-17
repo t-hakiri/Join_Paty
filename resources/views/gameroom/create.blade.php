@@ -5,19 +5,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('新規登録フォーム') }}</div>
+                <div class="card-header text-center">{{ __('ゲームルームを作成する') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('gameroom.store') }}">
                         @csrf
 
+                        <br>
                         <div class="form-group row">
-                            <label for="room_name" class="col-md-4 col-form-label text-md-right">{{ __('ルーム名') }}</label>
+                            <label for="game_title" class="col-md-4 col-form-label text-md-right">{{ __('ゲームタイトル') }}</label>
 
                             <div class="col-md-6">
-                                <input id="room_name" placeholder="誰でも歓迎！" type="room_name" class="form-control @error('room_name') is-invalid @enderror" name="room_name" autocomplete="new-room_name">
+                                <input id="game_title" placeholder="必須項目" type="game_title" class="form-control @error('game_title') is-invalid @enderror" name="game_title" required autocomplete="new-game_title">
 
-                                @error('room_name')
+                                @error('game_title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +27,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="game_title" class="col-md-4 col-form-label text-md-right">{{ __('ゲームタイトル') }}</label>
+                            <label for="room_name" class="col-md-4 col-form-label text-md-right">{{ __('ルーム名') }}</label>
 
                             <div class="col-md-6">
-                                <input id="game_title" placeholder="必須項目" type="game_title" class="form-control @error('game_title') is-invalid @enderror" name="game_title" required autocomplete="new-game_title">
+                                <input id="room_name" placeholder="誰でも歓迎！" type="room_name" class="form-control @error('room_name') is-invalid @enderror" required name="room_name" autocomplete="new-room_name">
 
-                                @error('game_title')
+                                @error('room_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -109,7 +110,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 ">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn blue-gradient">
                                     {{ __('作成する') }}
                                 </button>
 

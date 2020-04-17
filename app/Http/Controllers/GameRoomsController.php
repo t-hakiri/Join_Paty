@@ -61,8 +61,6 @@ class GameRoomsController extends Controller
         $available_discord = true;
       }
 
-      eval(\Psy\sh());
-
       $room = $gameroom->create([
           'play_time' => $request->play_time,
           'play_device' => $request->play_device,
