@@ -4,7 +4,7 @@
 <div class="chat-container row justify-content-center">
     <div class="chat-area">
         <div class="card">
-            <div class="card-header">Comment</div>
+            <div class="card-header text-center">{{optional($gameroom)->game_title}} : {{optional($gameroom)->room_name}}</div>
             <div class="card-body chat-card">
                 @foreach ($messages as $message)
                   @include('message.index', ['message' => $message])

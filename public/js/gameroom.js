@@ -20,7 +20,7 @@
   });
 
   $("#tag_6").on("click", function() {
-    $("#game_title").val("ポケモン ソード・シールド");
+    $("#game_title").val("LoL");
   });
 
   $("#tag_7").on("click", function() {

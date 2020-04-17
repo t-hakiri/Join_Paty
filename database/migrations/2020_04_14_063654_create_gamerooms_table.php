@@ -16,7 +16,7 @@ class CreateGameroomsTable extends Migration
         Schema::create('game_rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('owner');
-            $table->string('play_time');
+            $table->string('play_time')->nullable();
             $table->string('play_device');
             $table->string('comment')->nullable();
             $table->string('game_title')->nullable();

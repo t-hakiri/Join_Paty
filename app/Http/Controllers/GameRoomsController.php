@@ -13,17 +13,29 @@ use App\MessageUser;
 
 class GameRoomsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {      
       $gamerooms = GameRoom::all();
       $users = User::all();
 
-      return view('gameroom/index', compact('gamerooms'));
+      #キーワード受け取り
+      $keyword = $request->input('keyword');
+      #クエリ生成
+      $query = GameRoom::query();
+      #もしキーワードがあったら
+      if(!empty($keyword))
+      {
+        $query->where('game_title','like','%'.$keyword.'%')->orWhere('room_name','like','%'.$keyword.'%');
+        #ページネーション
+        $gamerooms = $query->orderBy('created_at','desc')->paginate(10);
+      }
+      
+      return view('gameroom/index', compact('gamerooms', 'users'));
     }
 
     public function show(GameRoom $gameroom)
     {
-      
+
       $messages = Message::where('room_id', $gameroom->id)->get();
       return view('gameroom/show', compact('gameroom', 'messages'));
     }
@@ -38,12 +50,19 @@ class GameRoomsController extends Controller
     
       $gameroom = new GameRoom();
 
+      eval(\Psy\sh());
+
+      if($request->vc_possible == 'on')
+      {
+        $vc_possible = true;
+      };
+
       $room = $gameroom->create([
           'play_time' => $request->play_time,
           'play_device' => $request->play_device,
           'comment' => $request->comment,
           'game_title' => $request->game_title,
-          // 'vc_possible' => '$request->vc_possible',
+          'vc_possible' => $vc_possible,
           // 'available_skype' => '$request->available_skype',
           // 'available_discord' => '$request->available_discord',
           // 'available_twitter' => '$request->available_twitter',

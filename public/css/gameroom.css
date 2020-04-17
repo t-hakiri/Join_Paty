@@ -11,3 +11,11 @@
 .inline-block {
   display: inline-block;
 }
+
+.room_title{
+  font-size: 2rem;
+}
+
+.gamerooms{
+  background-color: azure!important;
+}

@@ -43,7 +43,7 @@
                             <label for="play_time" class="col-md-4 col-form-label text-md-right">{{ __('遊ぶ時間') }}</label>
 
                             <div class="col-md-6">
-                                <input id="play_time" placeholder="必須項目" type="text" class="form-control @error('play_time') is-invalid @enderror" name="play_time" value="{{ old('play_time') }}" required autocomplete="play_time" autofocus>
+                                <input id="play_time" placeholder="任意項目" type="text" class="form-control @error('play_time') is-invalid @enderror" name="play_time" value="{{ old('play_time') }}" autocomplete="play_time" >
 
                                 @error('play_time')
                                     <span class="invalid-feedback" role="alert">
@@ -82,8 +82,17 @@
                         </div>
 
 
+                        <div class="form-group row">
+                            <label for="vc_possible" class="col-md-4 col-form-label text-md-right">{{ __('VCを使用する') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="vc_possible" type="checkbox" class="form-control" name="vc_possible">
+                            </div>
+                        </div>
+
+
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 ">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('作成する') }}
                                 </button>
