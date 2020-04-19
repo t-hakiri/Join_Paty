@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('user_image', 100)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('profile')->nullable();
             $table->string('twitter_address')->nullable();
             $table->string('skype_id')->nullable();
             $table->string('discord_id')->nullable();

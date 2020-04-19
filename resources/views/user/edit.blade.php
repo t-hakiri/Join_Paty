@@ -50,14 +50,6 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="profile" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="profile" type="text" class="form-control" name="profile" placeholder="任意項目（空欄可）" autocomplete="profile" value="{{ old('profile', isset($user->profile) ? $user->profile : '') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
                                 <label for="twitter_address" class="col-md-4 col-form-label text-md-right">{{ __('twitterアカウント') }}</label>
 
                                 <div class="col-md-6">
