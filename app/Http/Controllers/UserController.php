@@ -60,7 +60,6 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->profile = $request->profile;
         $user->twitter_address = $request->twitter_address;
         $user->skype_id = $request->skype_id;
         $user->discord_id = $request->discord_id;
