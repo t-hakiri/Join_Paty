@@ -9,7 +9,7 @@
             <div class="row">
               <div class="col-md-6">
                 @if($user->user_image == null)
-                <img src="/storage/user/no_image.png" class="user_image">
+                <img src="/storage/img/no_image.png" class="user_image">
                 @else
                 <img src="/storage/user/{{ $user->user_image }}" class="user_image">
                 @endif
