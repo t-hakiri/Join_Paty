@@ -9,10 +9,19 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
+                background-image: url('/storage/img/bg.jpg');
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -45,7 +54,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 90px;
             }
 
             .links > a {
@@ -61,36 +70,28 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .line {
+                border: dotted; 1px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">ログイン</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">新規登録</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+        <div class="flex-center position-ref full-height ">
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md ">
                     Join party!
+                    <br>
                 </div>
+                <h4>〜  一緒にゲームをプレイする仲間を募集  〜</h4>
+                <br><br><br>
 
-                <div class="links">
-                    
-                    <h4>ご利用中の方は</h4>
-                    <a href="{{ route('login') }}">ログイン</a>
-                    <hr>
-                    <h4>初めてご利用の方は</h4>
-                    <a href="{{ route('register') }}">新規登録</a>
+                <div class="links ">
+                    <h5>既にご利用中の方は</h5>
+                    <a class="btn btn-black text-white btn-md ml-0" href="{{ route('login') }}" role="button">Login<i class="fa fa-gem ml-2"></i></a>
+                    <hr class="my-5 animated rotateIn line ">
+                    <h5>初めてご利用の方は</h5>
+                    <a class="btn btn-black text-white btn-md ml-0" href="{{ route('register') }}" role="button">Start now<i class="fa fa-gem ml-2"></i></a>
                     <br><br><br><br><br>
                     <a href="https://github.com/t-hakiri/Join_Paty">GitHub</a>
                 </div>

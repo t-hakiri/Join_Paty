@@ -35,19 +35,13 @@
                 <p>discord_id : 未設定</p>
                 @endif
               </div>
-              <div class="card">
-                @if (isset( $user->profile ))
-                <p>profile : {{$user->profile}}</p>
-                @else
-                <p>profile : 未設定</p>
-                @endif
-            </div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="text-center">
          @if ($current_user == $user)
-         <a href="/user/{{ $user->id }}/edit" class="btn btn-primary">edit</a>
+          <br>
+          <a href="/user/{{ $user->id }}/edit" class="btn btn-primary">edit</a>
          @endif
       </div>
     </div>

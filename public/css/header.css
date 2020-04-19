@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+body {
+  background-image: url('/storage/img/bg.jpg');
+}
+
 .right {
   position:  absolute;
   right: 60rem;
