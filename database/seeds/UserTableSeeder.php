@@ -13,8 +13,8 @@ class UserTableSeeder extends Seeder
     {
       $user = new \App\User([
         'name' => 'test',
-        'email' => 'test1@aa.aa',
-        'password' => 'test1@aa.aa',
+        'email' => 'test@aa.aa',
+        'password' => 'test@aa.aa',
         ]);
         $user->save();
 
