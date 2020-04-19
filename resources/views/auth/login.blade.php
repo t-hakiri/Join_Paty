@@ -48,15 +48,22 @@
                 <div class="text-center">
                   <button type="submit" class="btn btn-outline-orange btn-rounded my-4 waves-effect">ログイン！</button>
                 </div>
-            </div>
+              </div>
+            </form>
+
+            <form method="POST" action="{{ route('login') }}">
+              @csrf
+              <input type="hidden" name="email" value="test@aa.aa">
+              <input type="hidden" name="password" value="test@aa.aa">
+              <div class="text-center">
+                <button type="submit" class="btn btn-outline-blue btn-rounded my-4 waves-effect">テストユーザでログイン</button>
+              </div>
+            </form>
           </div>
-          <!-- Material form login -->
         </div>
       </div>
-    </form>
   </section>
 </div>
-
 
 
 
