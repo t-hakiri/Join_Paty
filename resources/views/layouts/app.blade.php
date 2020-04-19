@@ -14,7 +14,7 @@
     <script src="{{ asset('js/gameroom.js') }}" defer></script>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('storage/img/favicon.ico') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
