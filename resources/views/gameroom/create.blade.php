@@ -16,7 +16,7 @@
                             <label for="game_title" class="col-md-4 col-form-label text-md-right">{{ __('ゲームタイトル') }}</label>
 
                             <div class="col-md-6">
-                                <input id="game_title" placeholder="必須項目" type="game_title" class="form-control @error('game_title') is-invalid @enderror" name="game_title" required autocomplete="new-game_title">
+                                <input id="game_title" placeholder="必須項目" type="game_title" class="form-control @error('game_title') is-invalid @enderror" name="game_title" required autocomplete="new-game_title" autofocus >
 
                                 @error('game_title')
                                     <span class="invalid-feedback" role="alert">

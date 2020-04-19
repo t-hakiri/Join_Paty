@@ -55,10 +55,14 @@ class GameRoomsController extends Controller
         $vc_possible = true;
         $available_skype = true;
         $available_discord = false;
-      } else {
+      } elseif($request->vc_possible == 'on' && $request->vc_tool == '2') {
         $vc_possible = true;
         $available_skype = false;
         $available_discord = true;
+      } else {
+        $vc_possible = false;
+        $available_skype = false;
+        $available_discord = false;
       }
 
       $room = $gameroom->create([
@@ -81,5 +85,15 @@ class GameRoomsController extends Controller
 
       return redirect('gameroom')->with(['flash_message'=> '作成しました']);
 
+    }
+
+    public function destroy(GameRoom $gameroom, Request $request)
+    {
+        if($request->user == $gameroom->owner) {
+          $gameroom->delete();
+          return redirect('gameroom')->with(['flash_message'=> '削除しました']);
+        }else{
+          return redirect('gameroom')->with(['flash_message'=> '不具合が発生しました。もう一度やりなおしてください']);
+        }
     }
 }

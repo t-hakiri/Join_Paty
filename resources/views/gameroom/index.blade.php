@@ -57,8 +57,13 @@
         <div class='card gamerooms'>
           <p class="card-text">
             <div class='text-center room_title'>
-              {{$gameroom->game_title}}
+              <h2>{{$gameroom->game_title}}</h2>
             </div>
+
+              <div class='text-center'>
+                <h7>部屋主</h7>
+                <a href="{{ action('UserController@show', $gameroom->owner) }}">{{$users->find($gameroom->owner)->name}}</a>
+              </div>
           </p>
 
           <hr>
@@ -81,12 +86,6 @@
             </div>
           </p>
 
-          <p class="card-text">
-            <div class='text-center'>
-              部屋主：{{$users->find($gameroom->owner)->name}}
-            </div>
-          </p>
-
           @if($gameroom->vc_possible == true)
             <p class="card-text">
               <div class='text-center'>
@@ -98,6 +97,11 @@
                       discode
                     @endif
                   </div>
+              </div>
+              @else
+              <br>
+              <div class='text-center'>
+                VCを使用しません
               </div>
             </p>
           @endif
