@@ -65,12 +65,15 @@
                 <a href="{{ action('UserController@show', $gameroom->owner) }}">{{$users->find($gameroom->owner)->name}}</a>
               </div>
           </p>
-
           <hr>
-
           <p class="card-text">
             <div class='text-center'>
-              {{$gameroom->comment}}
+              
+                <br>
+                <p>ーー募集の詳細ーー</p>
+                {{$gameroom->comment}}
+                <p>ーーーーーーーー</p>
+              
             </div>
           </p>
 
@@ -117,6 +120,9 @@
         <br>
       </div>
     @endforeach
+  </div>
+  <div class="d-flex justify-content-center">
+    {{$gamerooms->appends($params)->links()}}
   </div>
 </div>
 
