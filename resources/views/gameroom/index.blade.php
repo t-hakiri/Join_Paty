@@ -107,9 +107,6 @@
               <a href="/gameroom/{{ $gameroom->id }}" class="btn blue-gradient">参加する</a>
             </div>
           </p>
-
-
-
           <br>
 
         </div>
