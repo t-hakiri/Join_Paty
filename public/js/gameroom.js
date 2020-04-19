@@ -16,7 +16,7 @@
   });
 
   $("#tag_5").on("click", function() {
-    $("#game_title").val("dead by daylight");
+    $("#game_title").val("ポケモン");
   });
 
   $("#tag_6").on("click", function() {
@@ -24,7 +24,7 @@
   });
 
   $("#tag_7").on("click", function() {
-    $("#game_title").val("モンスターハンターworld");
+    $("#game_title").val("マインクラフト");
   });
   $("#tag_8").on("click", function() {
     $("#game_title").val("大乱闘スマッシュブラザーズ");
