@@ -22,7 +22,7 @@
       <p><a href="https://www.ea.com/ja-jp/games/apex-legends">Apex Legends</a></p>
     </div>
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/pubg.jpg" alt="送信" class="user_image" id='tag_2' /></button>
+      <button><img src="/storage/game-logo/pubg.jpg" alt="送信" class="user_image" id='tag_2' /></button>
       <p><a href="http://pubg.dmm.com/">PUBG</a></p>
     </div>
     <div class="inline-block">
