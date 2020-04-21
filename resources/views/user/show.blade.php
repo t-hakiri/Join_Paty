@@ -51,56 +51,51 @@
     </div>
   </div>
   @if (isset( $my_gamerooms ))
+    @foreach($my_gamerooms as $gameroom)
+      <div class="col-sm-4 ">
+        <div class='card my_gamerooms'>
+          <p class="card-text">
+            <div class='text-center room_title'>
+              <h2>{{$gameroom->game_title}}</h2>
+            </div>
+            <div class='text-center'>
+              <h7>部屋主</h7>
+                <a href="{{ action('UserController@show', $gameroom->owner) }}">あなた</a>
+            </div>
+          </p>
+          <hr>
+          <p class="card-text">
+            <div class='text-center'>        
+              <br>
+              <p>ーー募集の詳細ーー</p>
+              {{$gameroom->comment}}
+              <p>ーーーーーーーー</p>
+            </div>
+          </p>
 
-  @foreach($my_gamerooms as $gameroom)
-        <div class="col-sm-4 ">
-            <div class='card my_gamerooms'>
+          <p class="card-text">
+            <div class='text-center'>
+              対象機種：{{$gameroom->play_device}}
+            </div>
+          </p>
+
+          <p class="card-text">
+            <div class='text-center'>
+              プレイ予定時間：{{$gameroom->play_time}}
+            </div>
+          </p>
+          @if($gameroom->vc_possible == true)
             <p class="card-text">
-              <div class='text-center room_title'>
-                <h2>{{$gameroom->game_title}}</h2>
-              </div>
-
-                <div class='text-center'>
-                  <h7>部屋主</h7>
-                    <a href="{{ action('UserController@show', $gameroom->owner) }}">あなた</a>
+              <div class='text-center'>
+                VCを使用します
+                <div class="vc_tool">
+                  @if($gameroom->available_skype == true)
+                    skype
+                  @else
+                    discode
+                  @endif
                 </div>
-            </p>
-            <hr>
-            <p class="card-text">
-              <div class='text-center'>
-                
-                  <br>
-                  <p>ーー募集の詳細ーー</p>
-                  {{$gameroom->comment}}
-                  <p>ーーーーーーーー</p>
-                
-              </div>
-            </p>
-
-            <p class="card-text">
-              <div class='text-center'>
-                対象機種：{{$gameroom->play_device}}
-              </div>
-            </p>
-
-            <p class="card-text">
-              <div class='text-center'>
-                プレイ予定時間：{{$gameroom->play_time}}
-              </div>
-            </p>
-
-            @if($gameroom->vc_possible == true)
-              <p class="card-text">
-                <div class='text-center'>
-                    VCを使用します
-                    <div class="vc_tool">
-                      @if($gameroom->available_skype == true)
-                        skype
-                      @else
-                        discode
-                      @endif
-                    </div>
-                </div>
+            </div>
                 @else
                 <br>
                 <div class='text-center'>
@@ -111,17 +106,16 @@
 
             <p class="card-text">
               <div class='text-center'>              
-                    <a href="/gameroom/{{ $gameroom->id }}" class="btn peach-gradient">入る</a>
+                <a href="/gameroom/{{ $gameroom->id }}" class="btn peach-gradient">入る</a>
               </div>
             </p>
             <br>
-
           </div>
           <br>
         </div>
       @endforeach
     @else
-      <p>Hello</p>
+      <p>ありません</p>
     @endif
   </div>
 </div>

@@ -18,7 +18,7 @@
   <div class="popular_game text-center">
     
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/apex.jpg" alt="送信" class="user_image" id='tag_1' /></button>
+      <a><img src="/storage/game-logo/apex.jpg" alt="送信" class="user_image" id='tag_1' /></a>
       <p><a href="https://www.ea.com/ja-jp/games/apex-legends">Apex Legends</a></p>
     </div>
     <div class="inline-block">
