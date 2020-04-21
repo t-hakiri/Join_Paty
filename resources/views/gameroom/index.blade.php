@@ -6,7 +6,7 @@
       <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
         <form class="form-inline" action="{{ route('gameroom.index') }}">
           <div class="form-group">
-            <input type="text" name="keyword" id="game_title" class="form-control" placeholder="名前を入力してください">
+            <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力">
             <input type="submit" value="検索" class="btn btn-info">
           </div>
         </form>
@@ -54,7 +54,11 @@
   <div class="row justify-content-center">
     @foreach($gamerooms as $gameroom)
       <div class="col-sm-4 ">
-        <div class='card gamerooms'>
+        @if($gameroom->owner == Auth::id())
+          <div class='card my_gamerooms'>
+        @else
+          <div class='card gamerooms'>
+        @endif
           <p class="card-text">
             <div class='text-center room_title'>
               <h2>{{$gameroom->game_title}}</h2>
@@ -62,7 +66,11 @@
 
               <div class='text-center'>
                 <h7>部屋主</h7>
-                <a href="{{ action('UserController@show', $gameroom->owner) }}">{{$users->find($gameroom->owner)->name}}</a>
+                @if($gameroom->owner == Auth::id())
+                  <a href="{{ action('UserController@show', $gameroom->owner) }}">あなた</a>
+                @else
+                  <a href="{{ action('UserController@show', $gameroom->owner) }}">{{$users->find($gameroom->owner)->name}}</a>
+                @endif
               </div>
           </p>
           <hr>
@@ -111,7 +119,11 @@
 
           <p class="card-text">
             <div class='text-center'>
-              <a href="/gameroom/{{ $gameroom->id }}" class="btn blue-gradient">参加する</a>
+              @if($gameroom->owner == Auth::id())                  
+                  <a href="/gameroom/{{ $gameroom->id }}" class="btn peach-gradient">入る</a>
+                @else
+                  <a href="/gameroom/{{ $gameroom->id }}" class="btn blue-gradient">参加する</a>
+                @endif
             </div>
           </p>
           <br>

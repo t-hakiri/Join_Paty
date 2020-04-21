@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\GameRoom;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -18,9 +19,10 @@ class UserController extends Controller
     public function show($id)
     {
       $user = User::findOrFail($id);
+      $my_gamerooms = GameRoom::where('owner', $user->id)->get();
       $current_user = Auth::user();
 
-      return view('user/show', compact('user',('current_user')));
+      return view('user/show', compact('user',('current_user'),'my_gamerooms'));
     }
 
     // 更新用フォーム画面へ移動

@@ -43,7 +43,6 @@ class GameRoomsController extends Controller
 
     public function show(GameRoom $gameroom)
     {
-
       $messages = Message::where('room_id', $gameroom->id)->get();
       return view('gameroom/show', compact('gameroom', 'messages'));
     }
