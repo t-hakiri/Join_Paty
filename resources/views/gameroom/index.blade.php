@@ -9,6 +9,20 @@
             <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力">
             <input type="submit" value="検索" class="btn btn-info">
           </div>
+          <div class="vc_possible">
+            <p>VC使用する</p> 
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" checked="checked">指定なし
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index">VC使用する
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index_no">しない
+          </div>
+
+          <div class="layout_none" id="layout_none">
+            <p>VC使用する</p> 
+            <input class="" type="radio" name="vc_possible">Skype
+            <input class="" type="radio" name="vc_possible">Discode
+          </div>
+           
+
         </form>
       </div>
     </div>
