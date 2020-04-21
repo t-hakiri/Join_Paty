@@ -2,29 +2,24 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-    <div class="indexfild">
-      <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
-        <form class="form-inline" action="{{ route('gameroom.index') }}">
-          <div class="form-group">
-            <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力">
-            <input type="submit" value="検索" class="btn btn-info">
-          </div>
-          <div class="vc_possible">
-            <p>VC使用する</p> 
-            <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" checked="checked">指定なし
-            <input class="" type="radio" name="vc_possible" id="vc_possible_index">VC使用する
-            <input class="" type="radio" name="vc_possible" id="vc_possible_index_no">しない
-          </div>
+    <div class="col-sm-4">
+      <form class="form-inline" action="{{ route('gameroom.index') }}">
+        <div class="form-group">
+          <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力">
+          <input type="submit" value="検索" class="btn btn-info">
+        </div>
+        <div class="vc_possible">
+          <p>VC使用する</p> 
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" checked="checked">指定なし
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index">VC使用する
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no">しない
+        </div>
 
-          <div class="layout_none" id="layout_none">
-            <p>VC使用する</p> 
-            <input class="" type="radio" name="vc_possible">Skype
-            <input class="" type="radio" name="vc_possible">Discode
-          </div>
-           
-
-        </form>
-      </div>
+        <div class="layout_none" id="layout_none">
+          <input class="" type="radio" name="vc_possible">Skype
+          <input class="" type="radio" name="vc_possible">Discode
+        </div>
+      </form>
     </div>
   </div>
   <br>
