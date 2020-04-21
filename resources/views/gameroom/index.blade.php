@@ -26,7 +26,7 @@
       <p><a href="http://pubg.dmm.com/">PUBG</a></p>
     </div>
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/fortnite.jpg" alt="送信" class="user_image" id='tag_3' /></button>
+      <button type="button"><img src="/storage/game-logo/fortnite.jpg" alt="送信" class="user_image" id='tag_3' /></button>
       <p><a href="https://www.epicgames.com/fortnite/ja/home">Fortnite</a></p>
     </div>
     <div class="inline-block">
