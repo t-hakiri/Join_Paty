@@ -22,30 +22,30 @@
       <p><a href="https://www.ea.com/ja-jp/games/apex-legends">Apex Legends</a></p>
     </div>
     <div class="inline-block">
-      <button><img src="/storage/game-logo/pubg.jpg" alt="送信" class="user_image" id='tag_2' /></button>
+      <a><img src="/storage/game-logo/pubg.jpg" alt="送信" class="user_image" id='tag_2' /></a>
       <p><a href="http://pubg.dmm.com/">PUBG</a></p>
     </div>
     <div class="inline-block">
-      <button type="button"><img src="/storage/game-logo/fortnite.jpg" alt="送信" class="user_image" id='tag_3' /></button>
+      <a><img src="/storage/game-logo/fortnite.jpg" alt="送信" class="user_image" id='tag_3' /></a>
       <p><a href="https://www.epicgames.com/fortnite/ja/home">Fortnite</a></p>
     </div>
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/ff.jpg" alt="送信" class="user_image" id='tag_4' /></button>
+      <a><img src="/storage/game-logo/ff.jpg" alt="送信" class="user_image" id='tag_4' /></a>
       <p><a href="https://jp.finalfantasyxiv.com/">FF14</a></p>
     </div>
 
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/pokemon.jpg" alt="送信" class="user_image" id='tag_5' /></button>
+      <a><img src="/storage/game-logo/pokemon.jpg" alt="送信" class="user_image" id='tag_5' /></a>
       <p><a href="https://www.ea.com/">ポケモン剣盾</a></p>
     </div>
 
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/lol2.jpg" alt="送信" class="user_image" id='tag_6' /></button>
+      <a><img src="/storage/game-logo/lol2.jpg" alt="送信" class="user_image" id='tag_6' /></a>
       <p><a href="https://www.ea.com/">League of Legends</a></p>
     </div>
 
     <div class="inline-block">
-      <button type="submit"><img src="/storage/game-logo/mine.jpg" alt="送信" class="user_image" id='tag_7' /></button>
+      <a><img src="/storage/game-logo/mine.jpg" alt="送信" class="user_image" id='tag_7' /></a>
       <p><a href="https://www.ea.com/">Minecraft</a></p>
     </div>
   </div>
