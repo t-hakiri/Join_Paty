@@ -9,15 +9,19 @@
           <input type="submit" value="検索" class="btn btn-info">
         </div>
         <div class="vc_possible">
-          <p>VC使用する</p> 
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" checked="checked">指定なし
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index">VC使用する
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no">しない
+          <br>
+          <hr>
+          <p class="text-center">VC使用する</p> 
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">VC使用する
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">しない
+          <hr>
         </div>
 
         <div class="layout_none" id="layout_none">
-          <input class="" type="radio" name="vc_possible">Skype
-          <input class="" type="radio" name="vc_possible">Discode
+          <input class="" type="radio" name="vc_tool" value="1">Skype
+          <input class="" type="radio" name="vc_tool" value="2">Discode
+          <hr>
         </div>
       </form>
     </div>

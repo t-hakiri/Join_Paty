@@ -20,6 +20,11 @@ class GameRoomsController extends Controller
       $users = User::all();
       $params = 0;
 
+      // eval(\Psy\sh());
+      // 
+      // $request->vc_tool
+      // $request->vc_possible
+
       #キーワード受け取り
       $keyword = $request->input('keyword');
       #クエリ生成
@@ -30,7 +35,7 @@ class GameRoomsController extends Controller
         $query->where('game_title','like','%'.$keyword.'%')->orWhere('room_name','like','%'.$keyword.'%');
         #ページネーション
         $gamerooms = $query->orderBy('created_at','desc')->paginate(6);
-        
+
         $params = [
         'keyword' => $keyword,
         ];
