@@ -66,7 +66,11 @@
 
           <!--Second column-->
           <div class="col-lg-4 col-md-4">
-              <i class="far fa-check-circle fa-3x teal-text"></i>
+              @if ($todo->status == '完了')
+                <i class="far fa-check-circle fa-3x teal-text"></i>
+              @else
+                <i class="fas fa-running fa-3x teal-text"></i>
+              @endif
               <p class="font-weight-bold my-3">{{$todo->status}}</p>
           </div>
           <!--/Second column-->
