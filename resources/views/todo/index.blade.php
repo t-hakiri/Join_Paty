@@ -12,6 +12,7 @@
           <h3 class="font-weight-bold">やることリスト</h3>
           <p class="text-muted">リストをこなしていきましょう！</p>
           <p class="text-muted">ステータスは実行中→進行中→完了の順番で更新されます。</p>
+          <p class="text-muted">ステータスが完了になれば、削除することができます。</p>
 
           <form method="POST" action="{{route('todo.store')}}">
             @csrf
@@ -34,19 +35,19 @@
 
       <div class="row">
         <!--First column-->
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-          <p class="font-weight-bold my-3">名前</p>
+        <div class="col-lg-4 col-md-4 d-none d-md-block">
+          <p class="font-weight-bold my-3">リスト名</p>
         </div>
         <!--/First column-->
 
         <!--Second column-->
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs d-none d-md-block">
             <p class="font-weight-bold my-3">ステータス</p>
         </div>
         <!--/Second column-->
 
         <!--Third column-->
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs d-none d-md-block">
           <p class="font-weight-bold my-3">変更</p>
         </div>
       </div>
