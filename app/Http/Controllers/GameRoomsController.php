@@ -20,12 +20,10 @@ class GameRoomsController extends Controller
       $users = User::all();
       $params = 0;
 
-      // 
-      // $request->vc_tool
-      // $request->vc_possible
-
       #キーワード受け取り
       $keyword = $request->input('keyword');
+      $vc_tool = $request->vc_tool;
+      $vc_possible = $request->vc_possible;
       #クエリ生成
       $query = GameRoom::query();
       #もしキーワードがあったら
@@ -33,17 +31,19 @@ class GameRoomsController extends Controller
       {
         $query->where('game_title','like','%'.$keyword.'%');
 
-        if($request->vc_tool == '1' )
+        if($vc_tool == '1' )
         {
           $query->where('available_skype','=', true);
-        }elseif ($request->vc_tool == '2') {
+        }elseif ($vc_tool == '2') {
           $query->where('available_discord','=', true);
-        }elseif ($request->vc_possible == 'false') {
+        }elseif ($vc_possible == 'false') {
           $query->where('vc_possible','<>', true);
         }
 
         $params = [
         'keyword' => $keyword,
+        'vc_tool' => $vc_tool,
+        'vc_possible' => $vc_possible,
         ];
       }
 
