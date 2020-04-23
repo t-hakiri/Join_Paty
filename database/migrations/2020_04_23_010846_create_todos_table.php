@@ -17,6 +17,7 @@ class CreateTodosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('game_room_id');
             $table->text('content');
+            $table->string('status')->default('実行待ち');
             $table->timestamps();
         });
     }

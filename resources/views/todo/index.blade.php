@@ -1,7 +1,7 @@
 <div class="container">
+  <div class="card">
   @if(!empty($gameroom->todos))
   <h1 class="text-center">Todoリスト</h1>
-  <div class="card">
     <table class="table table-striped">
     <tbody>
       @foreach ($gameroom->todos as $todo)
@@ -25,17 +25,24 @@
             {{ method_field('delete') }}
           </form>
         </td> -->
+
+        <td>
+          <form action="{{ route('todo.edit', $todo->id) }}" method="post">
+            @csrf
+            @method('get')
+          <button type="submit" class="btn btn-primary">編集</button>
+        </form>
+        </td>
       </tr>
+
       @endforeach
     </table>
-  </div>
   @endif
-
-  <h1 class="text-center">Todoリスト追加</h1>
+</div>
   <form method="POST" action="{{route('todo.store')}}">
     @csrf
+    <br>
     <div class="row justify-content-center">
-      
       <input class="todo-area text-center" type="text" name="content"class="" placeholder="やりたいことを追加しよう！" required>
       <input type="hidden" name="room_id" value="{{$gameroom->id}}">
       </div>

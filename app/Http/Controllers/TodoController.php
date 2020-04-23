@@ -32,4 +32,9 @@ class TodoController extends Controller
         $todo->delete();
         return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
     }
+
+    public function edit()
+    {
+        return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
+    }
 }
