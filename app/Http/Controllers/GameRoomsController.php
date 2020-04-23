@@ -20,7 +20,6 @@ class GameRoomsController extends Controller
       $users = User::all();
       $params = 0;
 
-      // eval(\Psy\sh());
       // 
       // $request->vc_tool
       // $request->vc_possible
@@ -32,7 +31,15 @@ class GameRoomsController extends Controller
       #もしキーワードがあったら
       if(!empty($keyword))
       {
-        $query->where('game_title','like','%'.$keyword.'%')->orWhere('room_name','like','%'.$keyword.'%');
+        $query->where('game_title','like','%'.$keyword.'%');
+
+        if($request->vc_possible == 'true' &&  $request->vc_tool == '1' )
+        {
+          $query->where('available_skype','=', true);
+        }elseif ($request->vc_tool == '2') {
+          $query->where('available_discord','=', true);
+        }
+
         #ページネーション
         $gamerooms = $query->orderBy('created_at','desc')->paginate(6);
 
