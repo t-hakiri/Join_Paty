@@ -39,6 +39,8 @@ class GameRoomsController extends Controller
           $query->where('available_discord','=', true);
         }elseif ($vc_possible == 'false') {
           $query->where('vc_possible','<>', true);
+        }elseif ($vc_possible == 'true') {
+          $query->where('vc_possible','=', true);
         }
 
         $params = [
@@ -70,12 +72,12 @@ class GameRoomsController extends Controller
     
       $gameroom = new GameRoom();
 
-      if($request->vc_possible == 'on' && $request->vc_tool == '1')
+      if($request->vc_tool == '1')
       {
         $vc_possible = true;
         $available_skype = true;
         $available_discord = false;
-      } elseif($request->vc_possible == 'on' && $request->vc_tool == '2') {
+      } elseif($request->vc_tool == '2') {
         $vc_possible = true;
         $available_skype = false;
         $available_discord = true;

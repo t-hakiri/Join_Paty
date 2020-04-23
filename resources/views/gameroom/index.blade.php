@@ -11,10 +11,10 @@
         <div class="vc_possible">
           <br>
           <hr>
-          <p class="text-center">VC使用する</p> 
+          <p class="text-center">ボイスチャット</p> 
           <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">VC使用する
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">しない
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">使用する
+          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">使用しない
           <hr>
         </div>
 
