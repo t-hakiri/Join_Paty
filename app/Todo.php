@@ -9,5 +9,7 @@ class Todo extends Model
     protected $fillable = [
         'content',
         'game_room_id',
+        'status',
     ];
 }
+

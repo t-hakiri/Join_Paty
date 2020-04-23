@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="{{ asset('css/chatroom.css') }}">
 @section('content')
 
+@include('todo.index')
+
 @if($gameroom->owner == Auth::id())
     <div class="row justify-content-center">
         <form style="display:inline" action="{{ route('gameroom.destroy', $gameroom->id) }}" method="post">
@@ -39,8 +41,6 @@
         </div>
     </div>
 </form>
-
-@include('todo.index')
 
 @endsection
 

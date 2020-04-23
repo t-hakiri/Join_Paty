@@ -1,54 +1,98 @@
-<div class="container">
-  <div class="card">
-  @if(!empty($gameroom->todos))
-  <h1 class="text-center">Todoリスト</h1>
-    <table class="table table-striped">
-    <tbody>
-      @foreach ($gameroom->todos as $todo)
-      <tr>
-        <td>{{$todo->content}}</td>
+<div class="container my-5 py-5 z-depth-1 card-color">
 
-        <!-- 削除ボタン -->
-        <td>
-          <form action="{{ route('todo.destroy', $todo->id) }}" method="post">
-          <input type="hidden" name="room_id" value="{{$gameroom->id}}">
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-xl-6 col-md-8">
+
+          <h3 class="font-weight-bold">やることリスト</h3>
+          <p class="text-muted">リストをこなしていきましょう！</p>
+          <p class="text-muted">ステータスは実行中→進行中→完了の順番で更新されます。</p>
+
+          <form method="POST" action="{{route('todo.store')}}">
             @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">削除</button>
-        </form>
-        </td>
+            <br>
+            <div class="row justify-content-center">
+              <input class="todo-area text-center" type="text" name="content"class="" placeholder="やりたいことを追加しよう！" required>
+              <input type="hidden" name="room_id" value="{{$gameroom->id}}">
+            </div>
 
-        <!-- 削除した際にポップ画面で確認をする -->
-        <!-- <td><a class="del" data-id="{{ $todo->id }}" href="#">削除</a>
-          <form method="post" action='{{ url('/todos', $todo->id) }}' id="form_{{ $todo->id}}">
-            {{ csrf_field() }}
-            {{ method_field('delete') }}
+            <br>
+            <div class="row justify-content-center">
+              <button type="submit" class="btn btn-primary">追加する</button> 
+            </div>
           </form>
-        </td> -->
+          <br><br>
+        </div>
 
-        <td>
-          <form action="{{ route('todo.edit', $todo->id) }}" method="post">
-            @csrf
-            @method('get')
-          <button type="submit" class="btn btn-primary">編集</button>
-        </form>
-        </td>
-      </tr>
+        <!--Grid column-->
 
-      @endforeach
-    </table>
-  @endif
-</div>
-  <form method="POST" action="{{route('todo.store')}}">
-    @csrf
-    <br>
-    <div class="row justify-content-center">
-      <input class="todo-area text-center" type="text" name="content"class="" placeholder="やりたいことを追加しよう！" required>
-      <input type="hidden" name="room_id" value="{{$gameroom->id}}">
       </div>
+      <!--Grid row-->
 
-      <div class="row justify-content-center">
-      <button type="submit" class="btn btn-primary">追加する</button> 
-    </div>
-  </form>
-</div>
+
+      <!--Grid row-->
+      <hr>
+      @foreach ($gameroom->todos as $todo)
+        <br>
+        <div class="row ">
+
+          <!--First column-->
+          <div class="col-lg-4 col-md-4">
+            <i class="fas fa-gem fa-3x blue-text"></i>
+   
+            <p class="font-weight-bold my-3">{{$todo->content}}</p>
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-lg-4 col-md-4">
+              <i class="fas fa-chart-area fa-3x teal-text"></i>
+
+              <p class="font-weight-bold my-3">{{$todo->status}}</p>
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-lg-4 col-md-4">
+            <i class="fas fa-cogs fa-3x indigo-text"></i>
+
+            @if ($todo->status == '完了')
+              <form action="{{ route('todo.destroy', $todo->id) }}" method="post">
+                <input type="hidden" name="room_id" value="{{$gameroom->id}}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-md ml-0 mb-5">削除する</button>
+              </form>
+            @else
+              <form action="{{ route('todo.change', $todo->id) }}" method="get">
+                @csrf
+                <input type="hidden" name="room_id" value="{{$gameroom->id}}">
+                <button type="submit" class="btn btn-info btn-md ml-0 mb-5">ステータスをまわす</button>
+              </form>
+            @endif
+          </div>
+      
+              
+
+          <!--/Third column-->
+
+          <!--Fourth column-->
+          
+          <!--/Fourth column-->
+          <hr>
+        </div>
+        <!--/Grid row-->
+        <hr>
+      @endforeach
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>

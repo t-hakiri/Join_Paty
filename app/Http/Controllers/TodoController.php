@@ -30,11 +30,18 @@ class TodoController extends Controller
     public function destroy(Todo $todo, Request $request)
     {
         $todo->delete();
-        return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
+        return redirect()->action('GameRoomsController@show', ['id' => $request->room_id])->with(['flash_message'=> '削除しました']);
     }
 
-    public function edit()
+    public function change(Todo $todo, Request $request)
     {
-        return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
+      if($todo->status == '実行待ち') {
+        $todo->status = '進行中';
+      }elseif ($todo->status == '進行中') {
+        $todo->status = '完了';
+      }
+      $todo->save();
+
+      return redirect()->action('GameRoomsController@show', ['id' => $request->room_id])->with(['flash_message'=> 'ステータスを変更しました']);
     }
 }
