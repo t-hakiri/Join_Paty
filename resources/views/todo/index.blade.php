@@ -28,14 +28,29 @@
           </form>
           <br><br>
         </div>
-
         <!--Grid column-->
-
       </div>
       <!--Grid row-->
 
+      <div class="row">
+        <!--First column-->
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+          <p class="font-weight-bold my-3">名前</p>
+        </div>
+        <!--/First column-->
 
-      <!--Grid row-->
+        <!--Second column-->
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+            <p class="font-weight-bold my-3">ステータス</p>
+        </div>
+        <!--/Second column-->
+
+        <!--Third column-->
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+          <p class="font-weight-bold my-3">変更</p>
+        </div>
+      </div>
+
       <hr>
       @foreach ($gameroom->todos as $todo)
         <br>
@@ -43,16 +58,14 @@
 
           <!--First column-->
           <div class="col-lg-4 col-md-4">
-            <i class="fas fa-gem fa-3x blue-text"></i>
-   
+            <i class="fas fa-file-signature fa-3x blue-text"></i>
             <p class="font-weight-bold my-3">{{$todo->content}}</p>
           </div>
           <!--/First column-->
 
           <!--Second column-->
           <div class="col-lg-4 col-md-4">
-              <i class="fas fa-chart-area fa-3x teal-text"></i>
-
+              <i class="far fa-check-circle fa-3x teal-text"></i>
               <p class="font-weight-bold my-3">{{$todo->status}}</p>
           </div>
           <!--/Second column-->
@@ -76,9 +89,6 @@
               </form>
             @endif
           </div>
-      
-              
-
           <!--/Third column-->
 
           <!--Fourth column-->
@@ -89,10 +99,6 @@
         <!--/Grid row-->
         <hr>
       @endforeach
-
-
     </section>
     <!--Section: Content-->
-
-
   </div>
