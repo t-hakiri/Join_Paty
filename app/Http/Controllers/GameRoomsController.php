@@ -9,6 +9,7 @@ use App\Message;
 use App\User;
 use App\ChatRoom;
 use App\MessageUser;
+use App\Todo;
 
 
 class GameRoomsController extends Controller

@@ -25,4 +25,7 @@ Route::group(['middleware' => ['auth']], function(){
   Route::resource('gameroom', 'GameRoomsController');
   // Route::resource('message', 'MessageController');
   Route::POST('message', 'MessageController@store')->name('message.store');
+  // Route::resource('todo', 'TodoController');
+  Route::POST('todo', 'TodoController@store')->name('todo.store');
+  Route::DELETE('todo/{todo}', 'TodoController@destroy')->name('todo.destroy');
 });

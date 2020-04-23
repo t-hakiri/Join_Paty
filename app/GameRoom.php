@@ -19,4 +19,9 @@ class GameRoom extends Model
         'room_name',
         'owner',
     ];
+
+    public function todos()
+  {
+    return $this->hasMany('App\Todo');
+  }
 }
