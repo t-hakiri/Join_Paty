@@ -5,7 +5,7 @@
     <div class="col-sm-4">
       <form class="form-inline" action="{{ route('gameroom.index') }}">
         <div class="form-group">
-          <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力">
+          <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力" required>
           <input type="submit" value="検索" class="btn btn-info">
         </div>
         <div class="vc_possible">

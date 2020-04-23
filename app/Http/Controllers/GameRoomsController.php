@@ -15,7 +15,7 @@ class GameRoomsController extends Controller
 {
     public function index(Request $request)
     {      
-      $gamerooms = GameRoom::paginate(6);
+      // $gamerooms = GameRoom::paginate(6);
 
       $users = User::all();
       $params = 0;
@@ -33,22 +33,22 @@ class GameRoomsController extends Controller
       {
         $query->where('game_title','like','%'.$keyword.'%');
 
-        if($request->vc_possible == 'true' &&  $request->vc_tool == '1' )
+        if($request->vc_tool == '1' )
         {
           $query->where('available_skype','=', true);
         }elseif ($request->vc_tool == '2') {
           $query->where('available_discord','=', true);
+        }elseif ($request->vc_possible == 'false') {
+          $query->where('vc_possible','<>', true);
         }
-
-        #ページネーション
-        $gamerooms = $query->orderBy('created_at','desc')->paginate(6);
 
         $params = [
         'keyword' => $keyword,
         ];
       }
 
-      
+      #ページネーション
+      $gamerooms = $query->orderBy('created_at','desc')->paginate(6);
       
       return view('gameroom/index', compact('gamerooms', 'users', 'params'));
     }
