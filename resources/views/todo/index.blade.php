@@ -45,7 +45,7 @@
 
         <!--Third column-->
         <div class="col-4">
-          <p class="font-weight-bold my-3">変更</p>
+          <p class="font-weight-bold my-3">ステータス変更</p>
         </div>
       </div>
 
@@ -86,7 +86,7 @@
               <form action="{{ route('todo.change', $todo->id) }}" method="get">
                 @csrf
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
-                <button type="submit" class="btn btn-info btn-sm ml-0 mb-0">進める</button>
+                <button type="submit" class="btn btn-info btn-sm ml-0 mb-0">次へ</button>
               </form>
             @endif
           </div>
