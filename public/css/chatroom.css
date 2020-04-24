@@ -56,6 +56,6 @@
   background-color: cornsilk;
 }
 
-/*.one_line {
-  border: solid;
-}*/
+.todo-list {
+  height: 70px;
+}

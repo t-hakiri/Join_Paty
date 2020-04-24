@@ -26,7 +26,6 @@
               <button type="submit" class="btn btn-primary">追加する</button> 
             </div>
           </form>
-          <br><br>
         </div>
         <!--Grid column-->
       </div>
@@ -53,11 +52,11 @@
 
       <hr>
       @foreach ($gameroom->todos as $todo)
-        <div class="row ">
+        <div class="row todo-list">
 
           <!--First column-->
           <div class="col-lg-4 col-md-4">
-            <i class="fas fa-file-signature fa-3x blue-text"></i>
+            <i class="fas fa-file-signature fa-2x blue-text"></i>
             <p class="font-weight-bold my-3">{{$todo->content}}</p>
           </div>
           <!--/First column-->
@@ -65,9 +64,9 @@
           <!--Second column-->
           <div class="col-lg-4 col-md-4">
               @if ($todo->status == '完了')
-                <i class="far fa-check-circle fa-3x teal-text"></i>
+                <i class="far fa-check-circle fa-2x teal-text"></i>
               @else
-                <i class="fas fa-running fa-3x teal-text"></i>
+                <i class="fas fa-running fa-2x teal-text"></i>
               @endif
               <p class="font-weight-bold my-3">{{$todo->status}}</p>
           </div>
@@ -75,7 +74,7 @@
 
           <!--Third column-->
           <div class="col-lg-4 col-md-4">
-            <i class="fas fa-cogs fa-3x indigo-text"></i>
+            <i class="fas fa-cogs fa-2x indigo-text"></i>
 
             @if ($todo->status == '完了')
               <form action="{{ route('todo.destroy', $todo->id) }}" method="post">
@@ -88,7 +87,7 @@
               <form action="{{ route('todo.change', $todo->id) }}" method="get">
                 @csrf
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
-                <button type="submit" class="btn btn-info btn-md ml-0 mb-5">ステータスをまわす</button>
+                <button type="submit" class="btn btn-info btn-sm ml-0 mb-">ステータスをまわす</button>
               </form>
             @endif
           </div>
