@@ -4,17 +4,19 @@
   <div class="row justify-content-center">
     <div class="">
       <form class="" action="{{ route('gameroom.index') }}">
-        <div class="form-group form-inline">
-          <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力" required>
+        <div class="form-group row">
+          <div class="form-inline">
+            <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力" required>
+          </div>
           <input type="submit" value="検索" class="btn btn-info">
         </div>
         <div class="vc_possible">
           <br>
           <hr>
           <p class="text-center">ボイスチャット</p> 
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">使用する
-          <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">使用しない
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">使用する
+            <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">使用しない
           <hr>
         </div>
 
