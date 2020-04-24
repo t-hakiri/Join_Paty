@@ -32,19 +32,19 @@
 
       <div class="row">
         <!--First column-->
-        <div class="col-lg-4 col-md-4 d-none d-md-block">
+        <div class="col-4">
           <p class="font-weight-bold my-3">リスト名</p>
         </div>
         <!--/First column-->
 
         <!--Second column-->
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs d-none d-md-block">
+        <div class="col-4">
             <p class="font-weight-bold my-3">ステータス</p>
         </div>
         <!--/Second column-->
 
         <!--Third column-->
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs d-none d-md-block">
+        <div class="col-4">
           <p class="font-weight-bold my-3">変更</p>
         </div>
       </div>
