@@ -2,9 +2,9 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-4">
-      <form class="form-inline" action="{{ route('gameroom.index') }}">
-        <div class="form-group">
+    <div class="">
+      <form class="" action="{{ route('gameroom.index') }}">
+        <div class="form-group form-inline">
           <input type="text" name="keyword" id="game_title" class="form-control" placeholder="ゲームタイトルを入力" required>
           <input type="submit" value="検索" class="btn btn-info">
         </div>
