@@ -15,17 +15,21 @@
           <hr>
           <p class="text-center">ボイスチャット</p> 
             <div class="row justify-content-center">
-              <input class="" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
-              <input class="" type="radio" name="vc_possible" id="vc_possible_index" value="true">使用する
-              <input class="" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">使用しない
+              <div class="form-inline">
+                <input class="mr3" type="radio" name="vc_possible" id="vc_possible_index_none" value="" checked="checked">指定なし
+                <input class="mr3" type="radio" name="vc_possible" id="vc_possible_index" value="true">使用する
+                <input class="mr3" type="radio" name="vc_possible" id="vc_possible_index_no" value="false">使用しない
+              </div>
             </div>
           <hr>
         </div>
 
         <div class="layout_none" id="layout_none">
           <div class="row justify-content-center">
-            <input class="" type="radio" name="vc_tool" value="1">Skype
-            <input class="" type="radio" name="vc_tool" value="2">Discode
+            <div class="form-inline">
+              <input class="mr3" type="radio" name="vc_tool" value="1">Skype
+              <input class="mr3" type="radio" name="vc_tool" value="2">Discode
+            </div>
           </div>
           <hr>
         </div>

@@ -55,3 +55,8 @@
 .layout_none {
    display: none;
 }
+
+.mr3{
+  margin-right: 3px;
+  margin-left: 3px;
+}
