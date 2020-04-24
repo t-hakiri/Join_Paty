@@ -9,9 +9,9 @@
         <div class="col-xl-6 col-md-8">
 
           <h3 class="font-weight-bold">やることリスト</h3>
-          <p class="text-muted">リストをこなしていきましょう！</p>
-          <p class="text-muted">ステータスは実行中→進行中→完了の順番で更新されます。</p>
-          <p class="text-muted">ステータスが完了になれば、削除することができます。</p>
+          <p class="text-muted">次へを押すとステータスを変更できます。</p>
+          <p class="text-muted">ステータス推移：実行待ち、進行中、完了、削除</p>
+          <p class="text-muted">完了したリストのみ削除できます。</p>
 
           <form method="POST" action="{{route('todo.store')}}">
             @csrf
@@ -97,7 +97,7 @@
           <!--/Fourth column-->
         </div>
         <!--/Grid row-->
-        <hr>
+        <hr class="mt-0">
       @endforeach
     </section>
     <!--Section: Content-->
