@@ -15,7 +15,6 @@
 
           <form method="POST" action="{{route('todo.store')}}">
             @csrf
-            <br>
             <div class="row justify-content-center">
               <input class="todo-area text-center" type="text" name="content"class="" placeholder="やりたいことを追加しよう！" required>
               <input type="hidden" name="room_id" value="{{$gameroom->id}}">
@@ -55,14 +54,14 @@
         <div class="row todo-list">
 
           <!--First column-->
-          <div class="col-lg-4 col-md-4">
+          <div class="col-4">
             <i class="fas fa-file-signature fa-2x blue-text"></i>
             <p class="font-weight-bold my-3">{{$todo->content}}</p>
           </div>
           <!--/First column-->
 
           <!--Second column-->
-          <div class="col-lg-4 col-md-4">
+          <div class="col-4">
               @if ($todo->status == '完了')
                 <i class="far fa-check-circle fa-2x teal-text"></i>
               @else
@@ -73,7 +72,7 @@
           <!--/Second column-->
 
           <!--Third column-->
-          <div class="col-lg-4 col-md-4">
+          <div class="col-4">
             <i class="fas fa-cogs fa-2x indigo-text"></i>
 
             @if ($todo->status == '完了')
@@ -81,13 +80,13 @@
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-md ml-0 mb-5">削除する</button>
+                <button type="submit" class="btn btn-danger btn-sm ml-0 mb-5">削除する</button>
               </form>
             @else
               <form action="{{ route('todo.change', $todo->id) }}" method="get">
                 @csrf
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
-                <button type="submit" class="btn btn-info btn-sm ml-0 mb-">ステータスをまわす</button>
+                <button type="submit" class="btn btn-info btn-sm ml-0 mb-">進める</button>
               </form>
             @endif
           </div>
