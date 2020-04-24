@@ -63,7 +63,7 @@
                 }
                 .sb-title {
                 font-size: 17px;
-            }
+                }
             }
 
             .links > a {

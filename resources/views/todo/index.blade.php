@@ -1,5 +1,4 @@
 <div class="container my-5 py-5 z-depth-1 card-color">
-
     <!--Section: Content-->
     <section class="px-md-5 mx-md-5 text-center dark-grey-text">
 
@@ -54,7 +53,6 @@
 
       <hr>
       @foreach ($gameroom->todos as $todo)
-        <br>
         <div class="row ">
 
           <!--First column-->
@@ -99,7 +97,6 @@
           <!--Fourth column-->
           
           <!--/Fourth column-->
-          <hr>
         </div>
         <!--/Grid row-->
         <hr>
