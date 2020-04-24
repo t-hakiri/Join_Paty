@@ -83,7 +83,7 @@
                     Join party!
                     <br>
                 </div>
-                <h4>〜  一緒にゲームをプレイする仲間を募集  〜</h4>
+                <h5>〜  一緒にゲームをプレイする仲間を募集  〜</h5>
                 <br><br><br>
 
                 <div class="links ">
