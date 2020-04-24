@@ -54,7 +54,7 @@
             }
 
             .title {
-                font-size: 90px;
+                font-size: 80px;
             }
 
             .links > a {
@@ -79,8 +79,8 @@
     <body>
         <div class="flex-center position-ref full-height ">
             <div class="content">
-                <div class="title m-b-md ">
-                    Join party!
+                <div class="title m-b-md text-center">
+                Join party!
                     <br>
                 </div>
                 <h5>〜  一緒にゲームをプレイする仲間を募集  〜</h5>
