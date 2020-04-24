@@ -61,6 +61,9 @@
                 .title {
                 font-size: 80px;
                 }
+                .sb-title {
+                font-size: 17px;
+            }
             }
 
             .links > a {
@@ -89,7 +92,7 @@
                 Join party!
                     <br>
                 </div>
-                <h5>〜  一緒にゲームをプレイする仲間を募集  〜</h5>
+                <h5 class="sb-title">〜  一緒にゲームをプレイする仲間を募集  〜</h5>
                 <br><br><br>
 
                 <div class="links ">
