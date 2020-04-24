@@ -54,7 +54,7 @@
         <div class="row todo-list">
 
           <!--First column-->
-          <div class="col-4">
+          <div class="col-4 list-name">
             <i class="fas fa-file-signature fa-2x blue-text"></i>
             <p class="font-weight-bold my-3">{{$todo->content}}</p>
           </div>
@@ -80,13 +80,13 @@
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm ml-0 mb-5">削除する</button>
+                <button type="submit" class="btn btn-danger btn-sm ml-0 mb-0">削除する</button>
               </form>
             @else
               <form action="{{ route('todo.change', $todo->id) }}" method="get">
                 @csrf
                 <input type="hidden" name="room_id" value="{{$gameroom->id}}">
-                <button type="submit" class="btn btn-info btn-sm ml-0 mb-">進める</button>
+                <button type="submit" class="btn btn-info btn-sm ml-0 mb-0">進める</button>
               </form>
             @endif
           </div>

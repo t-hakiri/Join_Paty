@@ -57,5 +57,9 @@
 }
 
 .todo-list {
-  height: 70px;
+  
+}
+
+.list-name {
+  word-break: break-all;
 }
