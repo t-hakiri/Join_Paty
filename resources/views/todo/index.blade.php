@@ -29,14 +29,12 @@
         <!--Grid column-->
       </div>
       <!--Grid row-->
-
       <div class="row">
         <!--First column-->
         <div class="col-4">
           <p class="font-weight-bold my-3">リスト名</p>
         </div>
         <!--/First column-->
-
         <!--Second column-->
         <div class="col-4">
             <p class="font-weight-bold my-3">ステータス</p>
@@ -91,10 +89,6 @@
             @endif
           </div>
           <!--/Third column-->
-
-          <!--Fourth column-->
-          
-          <!--/Fourth column-->
         </div>
         <!--/Grid row-->
         <hr class="mt-0">
