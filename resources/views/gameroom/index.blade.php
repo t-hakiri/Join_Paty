@@ -11,7 +11,7 @@
           <input type="submit" value="検索" class="btn btn-info">
         </div>
         <div class="vc_possible">
-          <br>
+          
           <hr>
           <p class="text-center">ボイスチャット</p> 
             <div class="row justify-content-center">
