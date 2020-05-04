@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center">{{ __('ゲームルームを作成する') }}</div>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('gameroom.store') }}">
                         @csrf
