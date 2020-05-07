@@ -37,7 +37,7 @@
     </div>
   </div>
   <br>
-  <h4 class="text-center">画像をクリックすると検索窓にタイトルが入ります</h4>
+  <h4 class="text-center">画像をクリックすると検索欄にタイトルが入ります</h4>
   <div class="popular_game text-center">
     
     <div class="inline-block">
