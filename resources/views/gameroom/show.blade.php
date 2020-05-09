@@ -45,6 +45,3 @@
     <p class="d-none d-sm-block">※Shift + Enterで送信可能</p>
 </div>
 @endsection
-
-
-
