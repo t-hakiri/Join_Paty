@@ -11,9 +11,7 @@ class UserController extends Controller
 {
     public function __construct()
   {
-    $this->middleware('auth'); // 全アクセスにログイン認証が必要
-    // ->except・・・認証を除外するアクション配列
-    // ->only・・・認証が必要なアクション配列
+    $this->middleware('auth'); 
   }
 
     public function show($id)
@@ -25,27 +23,11 @@ class UserController extends Controller
       return view('user/show', compact('user',('current_user'),'my_gamerooms'));
     }
 
-    // 更新用フォーム画面へ移動
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User $user
-     * @return \Illuminate\Http\Response
-     */
     public function edit(User $user)
     {
       return view('user.edit', ['user' => $user]);
     }
 
-    // 実際の更新処理
-    // 終わったら、そのユーザのページへ移動
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User $user
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, User $user)
     {
         $uploadfile = $request->file('user_image');
@@ -69,12 +51,6 @@ class UserController extends Controller
         return redirect('user/'.$user->id)->with(['flash_message'=> '保存しました']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User $user
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(User $user)
     {
         $user->delete();

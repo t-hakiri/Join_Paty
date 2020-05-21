@@ -31,9 +31,5 @@ class MessageController extends Controller
       $messages = Message::where('room_id', $request->room_id)->get();
 
       return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
-
-      // return view('gameroom.show', ['gameroom' => $room_id], compact('messages'));
-      // return view('gameroom/show', compact('gameroom', 'messages'));
-
     }
 }

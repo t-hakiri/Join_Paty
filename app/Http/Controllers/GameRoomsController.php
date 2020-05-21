@@ -95,15 +95,10 @@ class GameRoomsController extends Controller
           'vc_possible' => $vc_possible,
           'available_skype' => $available_skype,
           'available_discord' => $available_discord,
-          // 'available_twitter' => '$request->available_twitter',
-          // 'available_ingame_vc' => '$request->available_ingame_vc',
           'room_name' => $request->room_name,
           'owner' => Auth::user()->id,
 
       ]);
-
-      // $chatroom = new ChatRoom();
-      // $chatroom->create();
 
       return redirect('gameroom')->with(['flash_message'=> '作成しました']);
 

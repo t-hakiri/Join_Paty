@@ -21,9 +21,6 @@ class TodoController extends Controller
       ]);
 
       return redirect()->action('GameRoomsController@show', ['id' => $request->room_id]);
-
-      // return view('gameroom.show', ['gameroom' => $room_id], compact('messages'));
-      // return view('gameroom/show', compact('gameroom', 'messages'));
     }
 
     public function destroy(Todo $todo, Request $request)
